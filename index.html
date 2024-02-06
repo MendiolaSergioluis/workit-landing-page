@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workit Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="bg bg-white" aria-hidden="true"></div>
+<div class="bg bg-dark" aria-hidden="true"></div>
+<div class="container">
+    <nav class="navbar">
+        <a href="#">
+            <img src="images/logo-light.svg" alt="logo">
+        </a>
+        <a href="#" class="btn btn-secondary">Apply for access</a>
+    </nav>
+    <main class="hero">
+        <h1>Data <span>tailored</span> to <br>your needs.</h1>
+        <a href="#" class="btn btn-primary">Learn More</a>
+    </main>
+    <img src="images/image-hero.webp" alt="Cellphone image" class="hero-img">
+    <div class="features" id="featureContainer">
+        <!-- Features will be rendered here -->
+    </div>
+    <div class="cta">
+        <div class="cta-picture">
+            <img src="images/image-founder.webp" alt="Founder Image">
+        </div>
+        <div class="cta-body">
+            <div class="cta-text">
+                <h3>Be the first to test</h3>
+                <p>
+                    Hi, I'm Louis Graham, the founder of the company. Book a demo call with me to become a beta tester
+                    for our app and kickstart your company. Apply for access below and I’ll be in touch to schedule a
+                    call.
+                </p>
+            </div>
+            <a href="#" class="btn btn-primary">Apply for access</a>
+            <img class="pattern pattern3" src="images/bg-pattern-3.svg" alt="Pattern3" aria-hidden="true">
+        </div>
+    </div>
+    <div class="social">
+        <img src="images/logo-dark.svg" alt="Logo">
+        <div class="social-icons">
+            <a href="#">
+                <img src="images/icon-facebook.svg" alt="Facebook">
+            </a>
+            <a href="#">
+                <img src="images/icon-twitter.svg" alt="Twitter">
+            </a>
+            <a href="#">
+                <img src="images/icon-instagram.svg" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</div>
+<img class="pattern pattern1" src="images/bg-pattern-1.svg" alt="Pattern1" aria-hidden="true">
+<img class="pattern pattern2" src="images/bg-pattern-2.svg" alt="Pattern2" aria-hidden="true">
+<script>
+    function renderFeature(number, title, content) {
+        return `
+        <div class="feature">
+            <div class="num-container">
+                <p class="feature-number">${number}</p>
+            </div>
+            <div class="feature-content">
+                <h2>${title}</h2>
+                <p>${content}</p>
+            </div>
+        </div>
+        `;
+    }
+
+    const features = [
+        {
+            number: 1,
+            title: 'Actionable insights',
+            content: 'Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.'
+        },
+        {
+            number: 2,
+            title: 'Actionable insights',
+            content: 'Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.'
+        },
+        {
+            number: 3,
+            title: 'Actionable insights',
+            content: 'Optimize your products, improve customer satisfaction and stay ahead of the competition with our product data analytics.'
+        }
+    ];
+
+    const featureContainer = document.getElementById('featureContainer');
+    const renderedFeatures = features.map(f => renderFeature(f.number, f.title, f.content));
+    featureContainer.innerHTML = renderedFeatures.join('');
+</script>
+</body>
+</html>
